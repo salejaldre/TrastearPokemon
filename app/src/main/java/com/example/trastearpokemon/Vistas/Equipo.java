@@ -154,8 +154,8 @@ public class Equipo extends AppCompatActivity {
         rb5 = findViewById(R.id.rb5);
         rb6 = findViewById(R.id.rb6);
         btn = findViewById(R.id.boton);
-        btnborrar = findViewById(R.id.botonborrar);
-        btnguardar = findViewById(R.id.botonguardar);
+        //btnborrar = findViewById(R.id.botonborrar);
+        //btnguardar = findViewById(R.id.botonguardar);
 
         ado = new Equipos_ADO(this);
         equipolocal = new ArrayList<>();

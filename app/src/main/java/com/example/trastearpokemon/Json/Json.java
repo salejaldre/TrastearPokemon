@@ -80,14 +80,18 @@ public class Json extends AsyncTask<String, Void, String> {
             types.add((JsonArray) objeto.get(p).get("type"));
 
             if (types.get(p).size() == 1) {
-                objpokemon.add(new Pokemon(Integer.parseInt(String.valueOf(objeto.get(p).get("id"))), String.valueOf(names.get(p).get("english")),
+                objpokemon.add(new Pokemon(Integer.parseInt(String.valueOf(objeto.get(p).get("id"))),
+                        String.valueOf(names.get(p).get("english")), String.valueOf(objeto.get(p).get("url")),
                         String.valueOf(types.get(p).get(0)), String.valueOf(bases.get(p).get("HP")),
-                        String.valueOf(bases.get(p).get("Attack")), String.valueOf(bases.get(p).get("Defense")), String.valueOf(bases.get(p).get("Sp. Attack")),
-                        String.valueOf(bases.get(p).get("Sp. Defense")), String.valueOf(bases.get(p).get("Speed"))));
+                        String.valueOf(bases.get(p).get("Attack")), String.valueOf(bases.get(p).get("Defense")),
+                        String.valueOf(bases.get(p).get("Sp. Attack")),String.valueOf(bases.get(p).get("Sp. Defense")),
+                        String.valueOf(bases.get(p).get("Speed"))));
             } else if (types.get(p).size() == 2) {
-                objpokemon.add(new Pokemon(Integer.parseInt(String.valueOf(objeto.get(p).get("id"))), String.valueOf(names.get(p).get("english")),
-                        String.valueOf(types.get(p).get(0)), String.valueOf(types.get(p).get(1)), String.valueOf(bases.get(p).get("HP")),
-                        String.valueOf(bases.get(p).get("Attack")), String.valueOf(bases.get(p).get("Defense")), String.valueOf(bases.get(p).get("Sp. Attack")),
+                objpokemon.add(new Pokemon(Integer.parseInt(String.valueOf(objeto.get(p).get("id"))),
+                        String.valueOf(names.get(p).get("english")), String.valueOf(objeto.get(p).get("url")),
+                        String.valueOf(types.get(p).get(0)), String.valueOf(types.get(p).get(1)),
+                        String.valueOf(bases.get(p).get("HP")),String.valueOf(bases.get(p).get("Attack")),
+                        String.valueOf(bases.get(p).get("Defense")), String.valueOf(bases.get(p).get("Sp. Attack")),
                         String.valueOf(bases.get(p).get("Sp. Defense")), String.valueOf(bases.get(p).get("Speed"))));
             }
 

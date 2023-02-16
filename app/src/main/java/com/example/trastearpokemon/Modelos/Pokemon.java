@@ -3,6 +3,7 @@ package com.example.trastearpokemon.Modelos;
 public class Pokemon {
     int id;
     String name;
+    String url;
     String type1;
     String type2;
     String hp;
@@ -30,6 +31,20 @@ public class Pokemon {
     public Pokemon(int id, String name, String type1, String type2, String hp, String attack, String defense, String spattack, String spdefense, String speed) {
         this.id = id;
         this.name = name;
+        this.type1 = type1;
+        this.type2 = type2;
+        this.hp = hp;
+        this.attack = attack;
+        this.defense = defense;
+        this.spattack = spattack;
+        this.spdefense = spdefense;
+        this.speed = speed;
+    }
+
+    public Pokemon(int id, String name, String url, String type1, String type2, String hp, String attack, String defense, String spattack, String spdefense, String speed) {
+        this.id = id;
+        this.name = name;
+        this.url = url;
         this.type1 = type1;
         this.type2 = type2;
         this.hp = hp;

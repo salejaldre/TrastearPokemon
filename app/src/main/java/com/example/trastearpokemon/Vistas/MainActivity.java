@@ -29,9 +29,9 @@ public class MainActivity extends AppCompatActivity implements Json.DownloadJSON
         handler.postDelayed(()-> {
             Pokemon_ADO ado = new Pokemon_ADO(this);
             ado.insertAll();
-            Intent intent = new Intent(getApplicationContext(), Pantalla_Principal.class);
+            Intent intent = new Intent(getApplicationContext(), Login.class /*Pantalla_Principal.class*/);
             startActivity(intent);
-        }, 2500);
+        }, 0);
 
     }
 }

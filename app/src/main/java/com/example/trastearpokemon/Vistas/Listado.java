@@ -8,6 +8,7 @@ import android.os.Bundle;
 
 import com.example.trastearpokemon.BBDD.Pokemon_ADO;
 import com.example.trastearpokemon.Controladores.Adaptador_Listado;
+import com.example.trastearpokemon.Json.Json;
 import com.example.trastearpokemon.Modelos.Pokemon;
 import com.example.trastearpokemon.R;
 

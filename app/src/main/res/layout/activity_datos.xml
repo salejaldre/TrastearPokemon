@@ -6,4 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Vistas.Datos">
 
+    <ImageView
+        android:id="@+id/imgfotopoke"
+        android:layout_width="202dp"
+        android:layout_height="167dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/oak" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

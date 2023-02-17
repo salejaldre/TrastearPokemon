@@ -29,7 +29,7 @@ public class Pokemon_ADO implements AutoCloseable{
         db.execSQL("DROP TABLE IF EXISTS pokemon");
 
         db.execSQL("CREATE TABLE pokemon (id INTEGER PRIMARY KEY, name TEXT, type1 TEXT," +
-                "type2 TEXT,hp TEXT,attack TEXT, defense TEXT, spattack TEXT, spdefense TEXT, speed TEXT )");
+                "type2 TEXT,hp TEXT,attack TEXT, defense TEXT, spattack TEXT, spdefense TEXT, speed TEXT, url TEXT )");
 
 
     }
@@ -40,13 +40,18 @@ public class Pokemon_ADO implements AutoCloseable{
         valores.put("id",pokemon.getId());
         valores.put("name",pokemon.getName().replace("\"", ""));
         valores.put("type1",pokemon.getType1().replace("\"", ""));
-        valores.put("type2",pokemon.getType2().replace("\"", ""));
+        if(pokemon.getType2() != null){
+            valores.put("type2",pokemon.getType2().replace("\"", ""));
+        } else{
+            valores.put("type2","null");
+        }
         valores.put("hp",pokemon.getHp().replace("\"", ""));
         valores.put("attack",pokemon.getAttack().replace("\"", ""));
         valores.put("defense",pokemon.getDefense().replace("\"", ""));
         valores.put("spattack",pokemon.getSpattack().replace("\"", ""));
         valores.put("spdefense",pokemon.getSpdefense().replace("\"", ""));
         valores.put("speed",pokemon.getSpeed().replace("\"", ""));
+        valores.put("url",pokemon.getUrl().replace("\"", ""));
 
         helper.getWritableDatabase().insert("pokemon",null,valores);
 
@@ -83,6 +88,7 @@ public class Pokemon_ADO implements AutoCloseable{
             poke.setSpattack(cursor.getString(7));
             poke.setSpdefense(cursor.getString(8));
             poke.setSpeed(cursor.getString(9));
+            poke.setUrl((cursor.getString(10)));
 
             datosPokemon.add(poke);
         }

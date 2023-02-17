@@ -3,4 +3,5 @@
     <string name="noseleccion">Selecciona un campo de tu equipo</string>
     <string name="añadido">Pokemon agregado al Equipo</string>
     <string name="noencontrado">Pokemon no encontrado</string>
+    <string name="title_activity_login">Login</string>
 </resources>

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements Json.DownloadJSON
 
         Json downloadJson = new Json(this);
 
-        downloadJson.execute("https://raw.githubusercontent.com/diurvi15/TrabajoGrupalBlackjack/main/jsonconurlspocoapoco.json");
+        downloadJson.execute("https://raw.githubusercontent.com/diurvi15/TrabajoGrupalBlackjack/main/pokedexfinal.json");
     }
 
     @Override

@@ -15,6 +15,13 @@
         android:theme="@style/Theme.TrastearPokemon"
         tools:targetApi="31">
         <activity
+            android:name=".Vistas.Creditos_Oak"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Vistas.Login"
             android:exported="false"
             android:label="@string/title_activity_login"

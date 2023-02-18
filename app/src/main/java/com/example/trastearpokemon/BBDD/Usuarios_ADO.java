@@ -18,6 +18,7 @@ public class Usuarios_ADO {
     private DBHelper_Pokemon helper;
     private SQLiteDatabase db;
     Context contexta;
+    private int i = 0;
 
     public static List<Usuario> datosusuario = new ArrayList<>();
 
@@ -41,6 +42,25 @@ public class Usuarios_ADO {
         valores.put("password",usuario.getPass());
 
         helper.getWritableDatabase().insert("usuarios",null,valores);
+    }
+
+    public List<Usuario> getAll(){
+        String sql = "SELECT * FROM usuarios";
+        Cursor cursor = db.rawQuery(sql,null);
+
+        datosusuario.clear();
+        while(cursor.moveToNext()){
+
+            Usuario user = new Usuario();
+
+            user.setUser(cursor.getString(1));
+            user.setPass(cursor.getString(2));
+
+
+            datosusuario.add(user);
+        }
+
+        return datosusuario;
     }
 
     public boolean validarLogin(String username, String password) {
@@ -68,8 +88,13 @@ public class Usuarios_ADO {
         }
 
         else {
-            return datosusu.get(0).getUser().equals(username) && datosusu.get(0).getPass().equals(password);
+            for(int i = 0; i < datosusu.size(); i++){
+                if(datosusu.get(i).getUser().equals(username) && datosusu.get(i).getPass().equals(password)){
+                    return true;
+                }
+            }
+            return false;
         }
-        }
+    }
 
 }

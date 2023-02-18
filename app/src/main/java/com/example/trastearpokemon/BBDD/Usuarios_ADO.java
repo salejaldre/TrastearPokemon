@@ -18,7 +18,6 @@ public class Usuarios_ADO {
     private DBHelper_Pokemon helper;
     private SQLiteDatabase db;
     Context contexta;
-    private int i = 0;
 
     public static List<Usuario> datosusuario = new ArrayList<>();
 

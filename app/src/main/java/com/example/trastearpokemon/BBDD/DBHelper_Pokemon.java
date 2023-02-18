@@ -15,6 +15,7 @@ public class DBHelper_Pokemon extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS equipo");
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS pokemon");
+        //sqLiteDatabase.execSQL("DROP TABLE IF EXISTS usuarios");
 
         sqLiteDatabase.execSQL("CREATE TABLE pokemon (id INTEGER PRIMARY KEY, name TEXT, type1 TEXT, " +
                 "type2 TEXT,hp TEXT,attack TEXT, defense TEXT, spattack TEXT, spdefense TEXT, speed TEXT, url TEXT )");
@@ -23,7 +24,7 @@ public class DBHelper_Pokemon extends SQLiteOpenHelper {
                 "pokemon2 TEXT, pokemon3 TEXT, pokemon4 TEXT, pokemon5 TEXT, " +
                 "pokemon6 TEXT)");
 
-        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, usuario TEXT, " +
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS usuarios (id INTEGER PRIMARY KEY AUTOINCREMENT, usuario TEXT UNIQUE, " +
                 "password TEXT)");
     }
 

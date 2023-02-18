@@ -38,12 +38,14 @@ public class Login extends AppCompatActivity {
         btnacceder = findViewById(R.id.btnacceder);
         btnregistrarse = findViewById(R.id.btnregistrarse);
 
+        userado = new Usuarios_ADO(getApplicationContext());
+
         btnregistrarse.setOnClickListener(v->{
 
             user = txtusuario.getText().toString().trim();
             pass = txtpass.getText().toString().trim();
 
-            userado = new Usuarios_ADO(getApplicationContext());
+
 
             List<Usuario> todosusers = userado.getAll();
 

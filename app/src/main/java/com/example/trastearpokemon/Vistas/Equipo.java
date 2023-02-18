@@ -15,10 +15,13 @@ import android.widget.Toast;
 import com.example.trastearpokemon.BBDD.Equipos_ADO;
 import com.example.trastearpokemon.BBDD.Pokemon_ADO;
 import com.example.trastearpokemon.Controladores.Controlador_AlertDialog;
+import com.example.trastearpokemon.Controladores.Controlador_Imagenes;
 import com.example.trastearpokemon.Modelos.EquipoModelo;
 import com.example.trastearpokemon.Modelos.Pokemon;
 import com.example.trastearpokemon.R;
+import com.squareup.picasso.Picasso;
 
+import java.security.Policy;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +56,7 @@ public class Equipo extends AppCompatActivity {
         setContentView(R.layout.activity_equipo);
 
         iniciarlabels();
-        borrarequipos();
+       // borrarequipos();
         listaequipos();
         cargarequipo();
 
@@ -70,7 +73,7 @@ public class Equipo extends AppCompatActivity {
         });
 
         btnborrar.setOnClickListener(v->{
-            borrarequipos();
+            //borrarequipos();
 
         });
 
@@ -99,7 +102,7 @@ public class Equipo extends AppCompatActivity {
         }
     }
 
-    private void borrarequipos() {
+   /* private void borrarequipos() {
 
         equipolocal.add(new Pokemon(1000,"Pokemon1","tipo","0","0","0","0","0","0"));
         equipolocal.add(new Pokemon(1001,"Pokemon2","tipo","0","0","0","0","0","0"));
@@ -108,7 +111,7 @@ public class Equipo extends AppCompatActivity {
         equipolocal.add(new Pokemon(1004,"Pokemon5","tipo","0","0","0","0","0","0"));
         equipolocal.add(new Pokemon(1005,"Pokemon6","tipo","0","0","0","0","0","0"));
 
-    }
+    }*/
 
     public static void cargarequipo(){
 
@@ -165,6 +168,7 @@ public class Equipo extends AppCompatActivity {
         adop = new Pokemon_ADO(this);
         listadepokemons = (ArrayList<Pokemon>) adop.getAll();
         nombrecitos = ado.getAll();
+        System.out.println();
     }
 
 }
